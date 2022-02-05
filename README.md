@@ -59,9 +59,6 @@ The images shown below represents the circuit diagram and a logic symbol of a CM
 <img src="https://user-images.githubusercontent.com/99066843/152634113-20813373-ca72-41a1-9ff2-96fba86acb30.png">
 </p> 
 
-    ![image](https://user-images.githubusercontent.com/99066843/152634113-20813373-ca72-41a1-9ff2-96fba86acb30.png)
-
-
 </br>
 
 *[Back To Top](#Table-of-Contents)* ⤴️ 
