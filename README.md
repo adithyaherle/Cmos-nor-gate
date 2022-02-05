@@ -19,11 +19,10 @@
 
 # CMOS NOR GATE
 
-This repository presents the design of an analog IP - *`avsdvco_1v8`* 
+This repository presents the design of a CMOS NOR Gate.
 
-It is a Current Starved Voltage Controlled Oscillator targerting 180nm tech for PLL based applications.
 
-![GIF](Images/vco.gif)
+![Screenshot (56)](https://user-images.githubusercontent.com/99066843/152633794-804909d7-d5be-4d44-85e7-9a551283c473.png)
 
 
 
@@ -31,7 +30,6 @@ It is a Current Starved Voltage Controlled Oscillator targerting 180nm tech for 
 
  * [Introduction](#Introduction)
  * [Block-Diagram](#Block-Diagram)
- * [Specifications](#Specifications)
  * [Open Source Tools Used](#Open-Source-Tools-Used)
  * [Clone This Repository](#Clone-This-Repository)
  * [Pre Layout Simulations](#Pre-Layout-Simulations)
@@ -59,14 +57,12 @@ It is a Current Starved Voltage Controlled Oscillator targerting 180nm tech for 
 
 # Introduction 
 
-A VCO is the heart of the PLL and can be designed either by LC or RC. A LC VCOs have superior phase noise performance compared with ring VCO’S. However, an LC VCO has a small tuning range, large layout area and possibly higher power. The ring oscillators, however, do not have the complication of the on-chip inductors required for the LC oscillators. Thus the chip area is reduced and have a wide tuning range; ring oscillators with even number of delay cells can produce quadrature-phase outputs.
-"Current-Starved" means that the current through the circuit is indeed limited. Lowering Vn and increasing Vp increases the effective drive resistance R<sub>eq</sub> of the inverter and thus increases the delay.The current in the first NMOS and PMOS are mirrored in each inverter/current source stage.Further tuning of oscillation frequency is done by adjusting the value of ID by changing size of bias stage transistors. Two buffer inverters are additionally used after inverter stages for preventing output loading (A
-large capacitive load may affect the F<sub>osc</sub> and K<sub>vco</sub> ).
+This paper aims to design a 2-input CMOS NOR Gate. A NOR gate (NOT+OR) is a logic gate which produces output that is true only if all the inputs are false else it produces false output. The CMOS NOR gate circuit as shown in figure.1 consists of pull-up network (i.e. PMOS) in series and pull-down network (i.e. NMOS) in parallel. Number of NMOS and PMOS used depends on the number of inputs for e.g. If I want a 3 input NOR gate then we should use 3 PMOS and 3 NMOS transistors. This paper consists of design and simulation of 2-input CMOS NOR gate followed by simulation results (Waveforms).
 
 
-The image shown below is a 5 stage - Current Starved VCO
+The image shown below is a circuit diagram of a CMOS NOR gate.
 
-<img src="Images/csvco.PNG">
+![image](https://user-images.githubusercontent.com/99066843/152633848-0b85bb7c-ab51-4721-87bb-5e0b6086fbcf.png)
 
 </br>
 
