@@ -29,7 +29,7 @@ This repository presents the design of a CMOS NOR Gate.
 # Table of Contents 
 
  * [Introduction](#Introduction)
- * [Block-Diagram](#Block-Diagram)
+ * [Truth-Table](#Truth-Table)
  * [Open Source Tools Used](#Open-Source-Tools-Used)
  * [Clone This Repository](#Clone-This-Repository)
  * [Pre Layout Simulations](#Pre-Layout-Simulations)
@@ -39,17 +39,6 @@ This repository presents the design of a CMOS NOR Gate.
      * [Schematics](#Schematics)
      * [Simulation](#[Simulation)
    * [Executing The Pre-Layout Simulations](#Executing-the-pre-layout-simulations)
- * [Post Layout Simulations](#Post-Layout-Simulations)
-   * [Tools And PDK Used For Post-Layout Simulations](#Tools-and-PDK-used-for-post-layout-simulations)
-     * [Installation Of Tools And PDK](#Installation-of-Tools-and-PDK)
-   * [Post-Layout Layout Implementation And Simulations](#Post-layout-Layout-Implementation-and-Simulations)
-     * [Layout](#Layout)
-     * [5-Stage Ring Oscillator Layout](#5-stage-ring-oscillator-layout)
-     * [Simulation](#Simulation)
-   * [Extracting The Spice File](#Extracting-the-spice-file)
-   * [Executing The Post-Layout Simulations](#Executing-the-post-layout-simulations)
- * [Observations](#Observations)
- * [Future Work](#Future-work)
  * [Author](#Author)
  * [Acknowledgements](#Acknowledgements)
    
@@ -60,9 +49,10 @@ This repository presents the design of a CMOS NOR Gate.
 This paper aims to design a 2-input CMOS NOR Gate. A NOR gate (NOT+OR) is a logic gate which produces output that is true only if all the inputs are false else it produces false output. The CMOS NOR gate circuit as shown in figure.1 consists of pull-up network (i.e. PMOS) in series and pull-down network (i.e. NMOS) in parallel. Number of NMOS and PMOS used depends on the number of inputs for e.g. If I want a 3 input NOR gate then we should use 3 PMOS and 3 NMOS transistors. This paper consists of design and simulation of 2-input CMOS NOR gate followed by simulation results (Waveforms).
 
 
-The image shown below is a circuit diagram of a CMOS NOR gate.
+The imagees shown below is a circuit diagram and a logic symbol of a CMOS NOR gate.
 
-![image](https://user-images.githubusercontent.com/99066843/152633848-0b85bb7c-ab51-4721-87bb-5e0b6086fbcf.png)
+![image](https://user-images.githubusercontent.com/99066843/152633848-0b85bb7c-ab51-4721-87bb-5e0b6086fbcf.png)      ![image](https://user-images.githubusercontent.com/99066843/152634113-20813373-ca72-41a1-9ff2-96fba86acb30.png)
+
 
 </br>
 
@@ -70,21 +60,17 @@ The image shown below is a circuit diagram of a CMOS NOR gate.
 
 </br>
 
-# Block-Diagram
+# Truth-Table
 
-The block diagram of the proposed Current Starved VCO can be found below: </br>
+The truth table of the proposed NOR Gate can be found below: </br>
 
 
 
 <p align="center">
-<img src="Images/vco_operating_modes.PNG">
+<img src="https://user-images.githubusercontent.com/99066843/152634230-b48e8bf2-1b5a-4af9-997d-ec4fa0b8e710.png">
 </p> 
 
 
-
-<p align="center">
-<img src="Images/vco_dimensions.PNG">
-</p> 
 
 </br>
 
@@ -92,24 +78,6 @@ The block diagram of the proposed Current Starved VCO can be found below: </br>
 
 </br>
 
-# Specifications
-
-| Parameter                   | Symbol | Min Value | Typical Value | Max Value | Unit |
-|:---------------------------:|:------:|:---------:|:-------------:|:---------:|:----:|
-| Technology                  | -      | -         | 180           | -         | nm   |
-| Supply Voltage              | VDD    | 1.5       | 1.8           | 2.0       | V    |
-| Operating Temperature Range | T      | -40       | +27           | +85       | °C   |
-| Control Voltage             | VCTRL  | 0.4       | 0.9           | 1.6       | V    |
-| Output VCO Frequency        | F_OUT  | 174 K     | 907 M         | 1.75 G    | Hz   |
-| Linearity                   | -      | -         | 90.28         | -         | %    |
-| Power consumption           | -      | -         | 400           | -         | uW   |
-
- 
-</br>
-
-*[Back To Top](#Table-of-Contents)* ⤴️ 
-
-</br>
  
 # Open Source Tools Used
 
@@ -335,255 +303,14 @@ The result of transient analysis of VCO @ `vctrl = 0.9 V` is shown below
 
 </br>
   
- # Post Layout Simulations
-
-## Tools And PDK Used For Post-Layout Simulations
-  * Magic
-  * Ngspice
-  * Skywater130 PDK
-  * Sky130A Tech file
-  
-### Installation Of Tools And PDK
 
 
-📥 Magic :
- 
-  * To install magic follow the steps below 
- </p>
- 
-        $ sudo wget `http://opencircuitdesign.com/magic/archive/magic-8.3.122.tgz`
-</p>
-
-        $ tar -xvzf magic-8.3.122.tgz
-</p>
-
-        $ cd magic-8.3.122
-</p>
-
-        $ sudo ./configure
-</p>
-
-        $ sudo make
-</p>
-
-        $ sudo make install
-     
-     
-📥 Ngspice :
- 
-  * Install Ngspice using this website given below.
-
-    🔗 http://ngspice.sourceforge.net/download.html
-    
-📥 Sky130A Tech file : 
- 
-  * Download `Sky130A Tech `file in `Layout_Files` folder in this repository and place it in current working directory.
-   
-📥 Sky130 PDK :  
- 
-   * Use git clone method  
-   
-    $ git clone https://foss-eda-tools.googlesource.com/skywater-pdk/libs/sky130_fd_pr
-   
- > Place `sky130_fd_pr` folder in current working directory to avoid errors during simulations.
-
-## Post-Layout Layout Implementation And Simulations 
-
-### Layout
-
-Layout of VCO is implemented using magic tool and screenshot of layout is shown below
-
-<p align="center">
-<img src="Images/avsdvco_layout.png">
-</p>
-
-#### 5-Stage Ring Oscillator Layout 
-
-<p align="center">
-<img src="Images/5_Stage_ring_oscillator_layout.png">
-</p>
-
-
-### Simulation
-
-After the layout implementation, spice netlist was extracted and the necessary model files of *sky130 tt*  transistors were included in the netlist and transient analysis was performed.
-
-The result of transient analysis of VCO @ `vctrl = 0.9 V` is shown below
-
-<p align="center">
-<img src="Images/avsdvco_1v8_post_layout_output.PNG">
-</p>
-
-
-📢 Output frequency of VCO `F_out = 907 MHz`
-
-
-
-🔶 Transient analysis is performed for different control voltages and output frequencies are tabulated for corresponding control voltage and graphs are plotted .
-
- <p align="center">
-<img src="Images/avsdvco_1v8_post_layout_table_1.PNG">
-</p>
-
-<p align="center">
-<img src="Images/avsdvco_1v8_post_layout_output_1.PNG">
-</p>
-
-
-🔶 Similarly, transient analysis is performed for different plots 
-
- *  ✔️ AVSDVCO_1V8 BIAS CURRENT VS CONTROL VOLTAGE   
- *  ✔️ AVSDVCO_1V8 OUTPUT FREQUENCY VS BIAS VOLTAGE 
-  
- </br>
- 
-💠 AVSDVCO_1V8 BIAS CURRENT VS CONTROL VOLTAGE
-
-<p align="center">
-<img src="Images/avsdvco_1v8_post_layout_table_2.PNG">
-
-<img src="Images/avsdvco_1v8_post_layout_output_2.PNG">
-</p>
-
-
-💠 AVSDVCO_1V8 OUTPUT FREQUENCY VS BIAS VOLTAGE
-
- <p align="center">
-<img src="Images/avsdvco_1v8_post_layout_table_3.PNG">
-
-<img src="Images/avsdvco_1v8_post_layout_output_3.PNG">
-</p>
-
- ## Extracting The Spice File
- 
-  * To Change directory using command
- 
- ``` 
-  $ cd Layout_Files
- ```
-  * To open magic tool
-  
-```
- $ magic -T sky130A.tech
-```
- * To open `avsdvco_1v8.mag` file , Select *File --> Open --> avsdvco_1v8.mag*
- 
- * To extract spice file , Type the following commands in magic commmand window
-</p>
-
-        % save <file-name>
-</p>
-
-        % extract all
-</p>
-
-        % ext2spice
-        
-  * Spice file will be created in current working directory and necessary changes are done to .spice file and saved as `avsdvco_1v8_test.spice`
-
-> Note: The `avsdvco_1v8_test.spice` file later renamed to `avsdvco_1v8_post_layout.cir.out` in `Post_Layout_Simulations` directory for easy access.
-  
-  
- ## Executing The Post-Layout Simulations
- 
-
-  * To Change directory using command
- 
- ``` 
-  $ cd Post_Layout_Simulations
- ```
-  * Run the `avsdvco_1v8_post_layout.cir.out` file in ngspice to perform simulations
- 
- ``` 
- $ ngpice avsdvco_1v8_post_layout.cir.out
- ```
- * Output graphs are displayed on the screen after the execution .
- * To perform various transient analysis follow the `README.txt` given in that directory or please find it below by clicking README.txt
-
-<details>
-<summary>README.txt</summary>
-  
-```
- ==================================== 
- IP Name :avsdvco_1V8
- PDK : Sky130 PDK by Google SkyWater
- ==================================== 
- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  Name of the author : NALINKUMAR S 
- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
- --------------------------------->
- To perform Post-Layout Simulations 
- --------------------------------->
- 	
- --> In file "avsdvco_1v8_post_layout.cir.out" change the control voltage and transient command to get output for various control voltages.
- --> To get outputs at different control voltages change the transient command according to control voltages given below for perfect output graphs
- 
- ---------------------------------------------------
-  VCTRL (Control Voltage) |    Transient command
- ---------------------------------------------------
-	0.4 V   	  |	tran 10ns 100us
-	0.5 V		  |	tran 1ns 5us
-	0.6 V		  |	tran 100ps 500ns
-	0.7 V		  |	tran 10ps 50ns
-	0.8 V		  |	tran 10ps 20ns
-	0.9 V  		  |	tran 1ps 10ns
-	1.0 V		  |	tran 1ps 5ns
-	1.1 V		  |	tran 1ps 5ns
-	1.2 V		  |	tran 1ps 5ns
-	1.3 V		  |	tran 1ps 5ns
-	1.4 V		  |	tran 1ps 5ns
-	1.5 V		  |	tran 1ps 5ns
-	1.6 V		  |	tran 1ps 5ns
-	
- *Note: -> Before performing simulations keep the " sky130_fd_pr " folder in current working directory to avoid errors.
- 	-> To get output frequency vs bias voltage plot varry VDD from 1.5 V to 2.0 V @ VCTRL = 0.9 V
-
- --> After performing all analysis the values are tabulated and output graphs are ploted :
-	
-	TABLES:
-	-------
-	-> AVSDVCO_1V8 OUTPUT FREQUENCY VS CONTROL VOLTAGE - avsdvco_1v8_post_layout_table_1.png
-	-> AVSDVCO_1V8 BIAS CURRENT VS CONTROL VOLTAGE - avsdvco_1v8_post_layout_table_2.png	
-	-> AVSDVCO_1V8 OUTPUT FREQUENCY VS BIAS VOLTAGE - avsdvco_1v8_post_layout_table_3.png
-	
-	PLOTS:
-	------
-	-> AVSDVCO_1V8 OUTPUT FREQUENCY VS CONTROL VOLTAGE - avsdvco_1v8_post_layout_output_1.png
-	-> AVSDVCO_1V8 BIAS CURRENT VS CONTROL VOLTAGE - avsdvco_1v8_post_layout_output_2.png	
-	-> AVSDVCO_1V8 OUTPUT FREQUENCY VS BIAS VOLTAGE - avsdvco_1v8_post_layout_output_3.png
-	-> AVSDVCO_1V8 TRANSIENT ANALYSIS @ VCTRL = 0.9 V - avsdvco_1v8_post_layout_output.png   
-  
 ```
 </details>
 
 </br>
 
-*[Back To Top](#Table-of-Contents)* ⤴️ 
 
-</br>
-
-# Observations
-
- 🏷️   Maximum frequency of VCO achieved for pre-layout simulations `F_OUT = 1.8 GHz` @ vctrl= 1.6 V
- 
- 🏷️   Maximum frequency of VCO achieved for post-layout simulations `F_OUT = 1.75 GHz` @ vctrl= 1.6 V
- 
- 🏷️   VCO frequency increases (F_OUT) when control voltage (VCTRL) is being increased for both pre-layout and post-layout simulations.
- 
- 🏷️   Bias current increases (I_BIAS) when control voltage (VCTRL) is being increased for both pre-layout and post-layout simulations.
- 
- 🏷️   Vco output frequency (F_OUT) increases when Bias voltage (VDD) is being increased for both pre-layout and post-layout simulations.
- 
- 🏷️   During pre-layout simulations, the output frequency of the VCO is dependent about `90.46 %` linearly on control voltage.
- 
- 🏷️   During post-layout simulations, the output frequency of the VCO is dependent about `90.28 %` linearly on control voltage.
- 
- 🏷️   Power consumption of circuit after layout implementation @ `Frequency = 907 MHz` with `50 ohm` load  = `400 uW` 
- 
- </br>
-
-*[Back To Top](#Table-of-Contents)* ⤴️ 
 
 </br>
  
