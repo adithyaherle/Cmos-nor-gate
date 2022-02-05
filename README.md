@@ -2,7 +2,9 @@
 
 ---
 
-![R](https://user-images.githubusercontent.com/99066843/152633063-1d128b5f-e02b-445b-9285-d7b66294b429.jpg)
+<p align="center">
+<img src="https://user-images.githubusercontent.com/99066843/152633063-1d128b5f-e02b-445b-9285-d7b66294b429.jpg">
+</p> 
 
 
 ---
@@ -31,13 +33,12 @@ This repository presents the design of a CMOS NOR Gate.
  * [Introduction](#Introduction)
  * [Truth-Table](#Truth-Table)
  * [Open Source Tools Used](#Open-Source-Tools-Used)
- * [Clone This Repository](#Clone-This-Repository)
  * [Pre Layout Simulations](#Pre-Layout-Simulations)
    * [Tools And PDK Used For Pre-Layout Simulations](#Tools-and-PDK-used-for-pre-layout-simulations)
      * [Installation Of Tools And PDK](#Installation-of-Tools-and-PDK)
    * [Pre-Layout Schematics And Simulations](#Pre-layout-schematics-and-simulations)
      * [Schematics](#Schematics)
-     * [Simulation](#[Simulation)
+     * [Simulation](#Simulation)
    * [Executing The Pre-Layout Simulations](#Executing-the-pre-layout-simulations)
  * [Author](#Author)
  * [Acknowledgements](#Acknowledgements)
@@ -46,12 +47,19 @@ This repository presents the design of a CMOS NOR Gate.
 
 # Introduction 
 
-This paper aims to design a 2-input CMOS NOR Gate. A NOR gate (NOT+OR) is a logic gate which produces output that is true only if all the inputs are false else it produces false output. The CMOS NOR gate circuit as shown in figure.1 consists of pull-up network (i.e. PMOS) in series and pull-down network (i.e. NMOS) in parallel. Number of NMOS and PMOS used depends on the number of inputs for e.g. If I want a 3 input NOR gate then we should use 3 PMOS and 3 NMOS transistors. This paper consists of design and simulation of 2-input CMOS NOR gate followed by simulation results (Waveforms).
+This repository aims to design a 2-input CMOS NOR Gate. A NOR gate (NOT+OR) is a logic gate which produces output that is true only if all the inputs are false else it produces false output. The CMOS NOR gate circuit as shown in figure.1 consists of pull-up network (i.e. PMOS) in series and pull-down network (i.e. NMOS) in parallel. Number of NMOS and PMOS used depends on the number of inputs for e.g. If I want a 3 input NOR gate then we should use 3 PMOS and 3 NMOS transistors. This repo consists of design and simulation of 2-input CMOS NOR gate followed by simulation results (Waveforms).
 
 
-The imagees shown below is a circuit diagram and a logic symbol of a CMOS NOR gate.
+The images shown below represents the circuit diagram and a logic symbol of a CMOS NOR gate.
 
-![image](https://user-images.githubusercontent.com/99066843/152633848-0b85bb7c-ab51-4721-87bb-5e0b6086fbcf.png)      ![image](https://user-images.githubusercontent.com/99066843/152634113-20813373-ca72-41a1-9ff2-96fba86acb30.png)
+<p align="center">
+<img src="https://user-images.githubusercontent.com/99066843/152633848-0b85bb7c-ab51-4721-87bb-5e0b6086fbcf.png">
+</p> 
+<p align="center">
+<img src="https://user-images.githubusercontent.com/99066843/152634113-20813373-ca72-41a1-9ff2-96fba86acb30.png">
+</p> 
+
+    ![image](https://user-images.githubusercontent.com/99066843/152634113-20813373-ca72-41a1-9ff2-96fba86acb30.png)
 
 
 </br>
@@ -62,7 +70,7 @@ The imagees shown below is a circuit diagram and a logic symbol of a CMOS NOR ga
 
 # Truth-Table
 
-The truth table of the proposed NOR Gate can be found below: </br>
+The truth table of the proposed CMOS NOR Gate can be found below: </br>
 
 
 
@@ -82,53 +90,23 @@ The truth table of the proposed NOR Gate can be found below: </br>
 # Open Source Tools Used
 
  🌟 eSim
- 
-   * eSim (previously known as Oscad / FreeEDA) is a free/libre and open source EDA tool for circuit design, simulation, analysis and PCB design. It is an integrated tool built    using free/libre and open source software such as KiCad, Ngspice and GHDL. eSim is released under GPL.It can serve as an alternative to commercially available/licensed software tools like OrCAD, Xpedition and HSPICE.
-
-        🔗 https://esim.fossee.in/home
+ * eSim (previously known as Oscad / FreeEDA) is a free/libre and open source EDA tool for circuit design, simulation, analysis and PCB design. It is an integrated tool built using free/libre and open source software such as KiCad, Ngspice and GHDL. eSim is released under GPL.It can serve as an alternative to commercially available/licensed software tools like OrCAD, Xpedition and HSPICE.
+  
  
  🌟 Ngspice
+ * Ngspice is a mixed-level/mixed-signal electronic circuit simulator.
  
-   * Ngspice is a mixed-level/mixed-signal electronic circuit simulator.
-   * Ngspice is based on three open-source free-software packages: 
-      * Spice3f5
-      * Xspice
-      * Cider1b1
    
-      🔗 http://ngspice.sourceforge.net/
-        
  🌟 Sky130 PDK
  
-   * The SKY130 is a mature 180nm-130nm hybrid technology originally developed internally by Cypress Semiconductor before being spun out into SkyWater Technology and made accessible to general industry. SkyWater and Google’s collaboration is now making this technology accessible to everyone.
+   * The SKY130 is a mature 180nm-130nm hybrid technology originally developed internally by Cypress Semiconductor before being spun out into SkyWater Technology and made       accessible to general industry. SkyWater and Google’s collaboration is now making this technology accessible to everyone.
    * The SKY130 Process Node is an extremely flexible offering, including many normally optional features as standard (features like the local interconnect, SONOS functionality, MiM capacitors, and more). This provides the designer with a wide range of flexibility in design choices.
    
-     🔗 https://github.com/google/skywater-pdk
-   
- 🌟 Magic
- 
-  * Magic is a venerable VLSI layout tool, written in the 1980's at Berkeley by John Ousterhout, now famous primarily for writing the scripting interpreter language Tcl. Due largely in part to its liberal Berkeley open-source license, magic has remained popular with universities and small companies.
-  * The open-source license has allowed VLSI engineers with a bent toward programming to implement clever ideas and help magic stay abreast of fabrication technology. However, it is the well thought-out core algorithms which lend to magic the greatest part of its popularity.
-  * Magic is widely cited as being the easiest tool to use for circuit layout, even for people who ultimately rely on commercial tools for their product design flow.
-  
-    🔗 http://opencircuitdesign.com/magic/
+       
 
 </br>
 
 *[Back To Top](#Table-of-Contents)* ⤴️ 
-</br>
-
-# Clone This Repository 
-
-  * Clone this repository using git clone command 
- 
- ```
- $ git clone https://github.com/Nalinkumar2002/avsdvco_1v8.git
-```
-
-</br>
-
-*[Back To Top](#Table-of-Contents)* ⤴️ 
-
 </br>
 
 # Pre Layout Simulations
@@ -142,187 +120,67 @@ The truth table of the proposed NOR Gate can be found below: </br>
 
 📥 eSim:
  
-  * Install the eSim tool using this website given below.
-  
-     🔗 https://esim.fossee.in/downloads
-   
-  *  You can also refer to the eSim Spoken Tutorial.
-  
-     🔗 https://spoken-tutorial.org/tutorial-search/?search_foss=eSim
+ * Download the latest eSim release for Windows OS from the below link provided.
+ * Locate the installer file in the folder where your downloaded files are kept.
+ * Double click on the file.
+ * If a pop-up window appears asking "Do you want to allow the following program from an unknown publisher to make changes to this computer?", click YES.
+ * Then in the ”License Agreement” window, select the I Agree option.
+ * Click Next when the program asks for you to ”Choose Install Location”. We have taken care to auto-select the destination folder path.
+ * In the next window that appears, select Install.
+ * A progress bar will appear; once it reaches 100%, ”Installation Complete” message will be shown at the top of the eSim setup window. Click on Close. eSim shortcut icon will be on your Desktop.
+
+        🔗 https://esim.fossee.in/home
      
 📥 Ngspice :
  
-  * Install Ngspice using this website given below.
-
-    🔗 http://ngspice.sourceforge.net/download.html
+   * The eSim installer also installs Ngspice, so one can access ngspice by running the ngspice.exe file present in the eSim installation folder.
    
 📥 Sky130 PDK :  
  
-   * Use git clone method  
+   * Download ZIP file from the below repository link shown below.
+   * After downloading the ZIP file, extract the contents, and go to libraries. Copy the sky130_fd_pr folder and paste it in the pre_layout folder.
    
-    $ git clone https://foss-eda-tools.googlesource.com/skywater-pdk/libs/sky130_fd_pr
-   
- > Place `sky130_fd_pr` folder in current working directory to avoid errors during simulations.
- 
+     🔗 https://github.com/google/skywater-pdk
 
 ## Pre-Layout Schematics And Simulations 
 
 ### Schematics 
 
-Current Starved VCO is designed using eSim and the screenshot of schematic file is shown below
+Design of a CMOS NOR Gate is done using eSim tool and the snapshot of its schematic is shown below 
 
 <p align="center">
-<img src="Images/avsdvco_1v8_pre_layout.cir.png">
+<img src="https://user-images.githubusercontent.com/99066843/152644535-87a188fa-a2c8-43cb-b989-360e22c72ea2.png">
 </p>
+The circuit schematic demonstrates the CMOS 2-input NOR gate as shown in the figure above. The two-input NOR gate uses two PMOS transistors in series between VDD and gate-output, and the complementary circuit of a parallel connection of two NMOS transistors between GND and gate-output as shown in figure.1. Here, first transistor’s source terminal is connected to Vdd (high) and lower transistor’s (NMOS) drain terminal is connected to Vss (GND). Second PMOS transistor’s drain terminal is shorted with both NMOS transistor’s source terminal and is given to the output which acts as an output terminal. It behaves complementary to the OR logic. If either input A or B or all are ‘high’ (1) then at least one of the lower transistors (NMOS) will be saturated, hence producing output ‘low’ (0). Only in the event of both inputs both inputs being ‘low’ (0) will both lower transistors (NMOS) be in cutoff mode and both upper transistors (PMOS) be saturated, thus producing output ‘high’ (1). This behavior defines a NOR Logic function.
 
 ### Simulation
 
-After creating the schematics, spice netlist was extracted with the help of esim and the necessary model files of *sky130 tt*  transistors were included in the netlist and transient analysis was performed.
+After creating the schematics, spice netlist was extracted with the help of esim and the eSim  mosfet models in the netlist file was replaced with sky130nm mosfet models and transient analysis was performed using ngspice.
 
-The result of transient analysis of VCO @ `vctrl = 0.9 V` is shown below
-
-<p align="center">
-<img src="Images/avsdvco_1v8_pre_layout_output.png">
-</p>
-
-
-📢 Output frequency of VCO `F_out = 937 MHz`
-
-
-
-🔶 Transient analysis is performed for different control voltages and output frequencies are tabulated for corresponding control voltage and graphs are plotted .
-
- <p align="center">
-<img src="Images/avsdvco_1v8_pre_layout_table_1.PNG">
-</p>
+The result of transient analysis is shown below
 
 <p align="center">
-<img src="Images/avsdvco_1v8_pre_layout_output_1.png">
+<img src="https://user-images.githubusercontent.com/99066843/152644831-04cbb7f1-c734-46ba-b08f-fd38d1686ab0.png">
 </p>
 
 
-🔶 Similarly, transient analysis is performed for different plots 
-
-*  ✔️ AVSDVCO_1V8 BIAS CURRENT VS CONTROL VOLTAGE   
-*  ✔️ AVSDVCO_1V8 OUTPUT FREQUENCY VS BIAS VOLTAGE 
-
- </br>
-
-💠 AVSDVCO_1V8 BIAS CURRENT VS CONTROL VOLTAGE
-
-<p align="center">
-<img src="Images/avsdvco_1v8_pre_layout_table_2.PNG">
-<img src="Images/avsdvco_1v8_pre_layout_output_2.png">
-</p>
-
-
-💠 AVSDVCO_1V8 OUTPUT FREQUENCY VS BIAS VOLTAGE
-
-<p align="center">
-<img src="Images/avsdvco_1v8_pre_layout_table_3.PNG">
-<img src="Images/avsdvco_1v8_pre_layout_output_3.png">
-</p>
 
  ## Executing The Pre-Layout Simulations
  
-  * Change directory using command
- 
- ``` 
-  $ cd Pre_Layout_Simulations
- ```
-  * Run the `avsdvco_1v8_pre_layout.cir.out` file in ngspice to perform simulations
- 
- ``` 
- $ ngpice avsdvco_1v8_pre_layout.cir.out
- ```
- * Output graphs are displayed on the screen after the execution .
- * To perform various transient analysis follow the `README.txt` given in that directory or please find it below by clicking README.txt
- 
- 
-<details>
-<summary>README.txt</summary>
-  
-```
- ==================================== 
- IP Name :avsdvco_1V8
- PDK : Sky130 PDK by Google SkyWater
- ==================================== 
- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  Name of the author : NALINKUMAR S 
- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
- --------------------------------->
- To perform Pre-Layout Simulations 
- --------------------------------->
- 	
- --> In file "avsdvco_1v8_pre_layout.cir.out" change the control voltage and transient command to get output for various control voltages.
- --> To get outputs at different control voltages change the transient command according to control voltages given below for perfect output graphs
- 
- ---------------------------------------------------
-  VCTRL (Control Voltage) |    Transient command
- ---------------------------------------------------
-	0.4 V   	  |	tran 10ns 100us
-	0.5 V		  |	tran 1ns 5us
-	0.6 V		  |	tran 100ps 500ns
-	0.7 V		  |	tran 10ps 50ns
-	0.8 V		  |	tran 10ps 20ns
-	0.9 V  		  |	tran 1ps 10ns
-	1.0 V		  |	tran 1ps 5ns
-	1.1 V		  |	tran 1ps 5ns
-	1.2 V		  |	tran 1ps 5ns
-	1.3 V		  |	tran 1ps 5ns
-	1.4 V		  |	tran 1ps 5ns
-	1.5 V		  |	tran 1ps 5ns
-	1.6 V		  |	tran 1ps 5ns
-	
- *Note: -> Before performing simulations keep the " sky130_fd_pr " folder in current working directory to avoid errors.
- 	-> To get output frequency vs bias voltage plot varry VDD from 1.5 V to 2.0 V @ VCTRL = 0.9 V
-
-
- --> After performing all analysis the values are tabulated and output graphs are ploted :
-	
-	TABLES:
-	-------
-	-> AVSDVCO_1V8 OUTPUT FREQUENCY VS CONTROL VOLTAGE - avsdvco_1v8_pre_layout_table_1.png
-	-> AVSDVCO_1V8 BIAS CURRENT VS CONTROL VOLTAGE - avsdvco_1v8_pre_layout_table_2.png	
-	-> AVSDVCO_1V8 OUTPUT FREQUENCY VS BIAS VOLTAGE - avsdvco_1v8_pre_layout_table_3.png
-	
-	PLOTS:
-	------
-	-> AVSDVCO_1V8 OUTPUT FREQUENCY VS CONTROL VOLTAGE - avsdvco_1v8_pre_layout_output_1.png
-	-> AVSDVCO_1V8 BIAS CURRENT VS CONTROL VOLTAGE - avsdvco_1v8_pre_layout_output_2.png	
-	-> AVSDVCO_1V8 OUTPUT FREQUENCY VS BIAS VOLTAGE - avsdvco_1v8_pre_layout_output_3.png
-	-> AVSDVCO_1V8 TRANSIENT ANALYSIS @ VCTRL = 0.9 V - avsdvco_1v8_pre_layout_output.png   
-  
-```
-</details>
-  
+  * First make sure the spice netlist which was extracted and modified is in the same directory as sky130_fd_pr folder.
+  * Add an extension .out to the netlist file at the end.
+  * Now run the "CMOS_NOR_GATE.cir.out" file in ngspice to perform the simulation.
+  * Output graphs are displayed on the screen after the execution.
+   
  </br>
 
 *[Back To Top](#Table-of-Contents)* ⤴️ 
 
 </br>
-  
-
-
-```
-</details>
-
-</br>
-
-
-
-</br>
- 
-# Future Work 
-
-  🏁 Linearity of the VCO can be increased.
- 
-  🏁 Tuning range of VCO can be increased further.
  
  # Author
  
-  🖊️ Nalinkumar S , B.E (Electronics and Communication Engineering), Madras Institute of Technology, Anna University, Tamil Nadu 
+  🖊️ Adithya Herle P S , B.Tech (Electronics and Communication Engineering), Reva University, Karntaka 
  
  
  # Acknowledgements
