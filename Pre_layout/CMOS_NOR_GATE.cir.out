@@ -1,0 +1,22 @@
+* C:\Users\adith\eSim-Workspace\CMOS_NOR_GATE\CMOS_NOR_GATE.cir
+
+.lib "sky130_fd_pr/models/sky130.lib.spice" tt
+
+
+xM1  vdd input_a Net-_M1-Pad3_ vdd sky130_fd_pr__pfet_01v8 w=1 l=0.5 M=1		
+xM2  Net-_M1-Pad3_ input_b vout vdd sky130_fd_pr__pfet_01v8 w=1 l=0.5 M=1		
+xM3  vout input_a GND GND sky130_fd_pr__nfet_01v8 w=.42 l=.5 M=1		
+xM4  vout input_b GND GND sky130_fd_pr__nfet_01v8 w=.42 l=.5 M=1		
+* U1  /input_a /input_b /vdd /vout PORT		
+
+vdd vdd 0 3.3
+v1 input_a 0 pulse(0 1.8 20us 0.1us 0.1us 20us 40us)
+v2 input_b 0 pulse(0 1.8 10us 0.1us 0.1us 10us 20us)
+.tran 0.1us 40us
+.control
+run
+plot v(input_a) 
+plot v(input_b) 
+plot v(vout)
+.endc
+.end

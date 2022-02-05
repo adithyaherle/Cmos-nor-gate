@@ -1,0 +1,15 @@
+* C:\Users\adith\eSim-Workspace\CMOS_NOR_GATE\CMOS_NOR_GATE.cir
+
+* EESchema Netlist Version 1.1 (Spice format) creation date: 02/04/22 10:59:04
+
+* To exclude a component from the Spice Netlist add [Spice_Netlist_Enabled] user FIELD set to: N
+* To reorder the component spice node sequence add [Spice_Node_Sequence] user FIELD and define sequence: 2,1,0
+
+* Sheet Name: /
+M1  /vdd /input_a Net-_M1-Pad3_ /vdd mosfet_p		
+M2  Net-_M1-Pad3_ /input_b /vout /vdd mosfet_p		
+M3  /vout /input_a GND GND mosfet_n		
+M4  /vout /input_b GND GND mosfet_n		
+U1  /input_a /input_b /vdd /vout PORT		
+
+.end
