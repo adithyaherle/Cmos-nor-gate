@@ -2,23 +2,22 @@
 
 ---
 
-![logo](Images/vco_logo.png)
+![R](https://user-images.githubusercontent.com/99066843/152633063-1d128b5f-e02b-445b-9285-d7b66294b429.jpg)
+
 
 ---
 
 
 </br>
 
-![Size](https://img.shields.io/github/repo-size/Nalinkumar2002/avsdvco_1v8?color=red)
-![Last Commit](https://img.shields.io/github/last-commit/Nalinkumar2002/avsdvco_1v8?color=green)
-![license](https://img.shields.io/github/license/Nalinkumar2002/avsdvco_1v8?color=blue)
+![Size](https://img.shields.io/github/repo-size/adithyaherle/Cmos-nor-gate?color=red)
+![Last Commit](https://img.shields.io/github/last-commit/adithyaherle/Cmos-nor-gate?color=green)
 
-[![specifications](https://img.shields.io/badge/Specifications-%20-orange)](https://github.com/Nalinkumar2002/avsdvco_1v8_sky130#Specifications)
 
 
 </br>
 
-# Current Starved Voltage Controlled Oscillator (VCO)
+# CMOS NOR GATE
 
 This repository presents the design of an analog IP - *`avsdvco_1v8`* 
 
