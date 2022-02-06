@@ -112,7 +112,6 @@ The result of transient analysis is shown below
  </br>
  
  
-*[Back to the start](#Table-of-Contents)* 
 
  
  
