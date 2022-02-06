@@ -12,13 +12,6 @@
 
 </br>
 
-![Size](https://img.shields.io/github/repo-size/adithyaherle/Cmos-nor-gate?color=red)
-![Last Commit](https://img.shields.io/github/last-commit/adithyaherle/Cmos-nor-gate?color=green)
-
-
-
-</br>
-
 # CMOS NOR GATE
 
 This repository presents the design of a CMOS NOR Gate.
@@ -32,17 +25,13 @@ This repository presents the design of a CMOS NOR Gate.
 
  * [Introduction](#Introduction)
  * [Truth-Table](#Truth-Table)
- * [Open Source Tools Used](#Open-Source-Tools-Used)
  * [Pre Layout Simulations](#Pre-Layout-Simulations)
    * [Pre-Layout Schematics And Simulations](#Pre-layout-schematics-and-simulations)
      * [Schematics](#Schematics)
      * [Simulation](#Simulation)
    * [Executing The Pre-Layout Simulations](#Executing-the-pre-layout-simulations)
- * [Author](#Author)
- * [Acknowledgements](#Acknowledgements)
+ * [References](#References)
    
-   
-
 # Introduction 
 
 This repository aims to design a 2-input CMOS NOR Gate. A NOR gate (NOT+OR) is a logic gate which produces output that is true only if all the inputs are false else it produces false output. The CMOS NOR gate circuit as shown in figure.1 consists of pull-up network (i.e. PMOS) in series and pull-down network (i.e. NMOS) in parallel. Number of NMOS and PMOS used depends on the number of inputs for e.g. If I want a 3 input NOR gate then we should use 3 PMOS and 3 NMOS transistors. This repo consists of design and simulation of 2-input CMOS NOR gate followed by simulation results (Waveforms).
@@ -79,29 +68,7 @@ The truth table of the proposed CMOS NOR Gate can be found below: </br>
 
 *[Back To Top](#Table-of-Contents)* ⤴️ 
 
-</br>
 
- 
-# Open Source Tools Used
-
- 🌟 eSim
- * eSim (previously known as Oscad / FreeEDA) is a free/libre and open source EDA tool for circuit design, simulation, analysis and PCB design. It is an integrated tool built using free/libre and open source software such as KiCad, Ngspice and GHDL. eSim is released under GPL.It can serve as an alternative to commercially available/licensed software tools like OrCAD, Xpedition and HSPICE.
-  
- 
- 🌟 Ngspice
- * Ngspice is a mixed-level/mixed-signal electronic circuit simulator.
- 
-   
- 🌟 Sky130 PDK
- 
-   * The SKY130 is a mature 180nm-130nm hybrid technology originally developed internally by Cypress Semiconductor before being spun out into SkyWater Technology and made       accessible to general industry. SkyWater and Google’s collaboration is now making this technology accessible to everyone.
-   * The SKY130 Process Node is an extremely flexible offering, including many normally optional features as standard (features like the local interconnect, SONOS functionality, MiM capacitors, and more). This provides the designer with a wide range of flexibility in design choices.
-   
-       
-
-</br>
-
-*[Back To Top](#Table-of-Contents)* ⤴️ 
 </br>
 
 # Pre Layout Simulations
@@ -127,7 +94,7 @@ The result of transient analysis is shown below
 
 
 
- ## Executing The Pre-Layout Simulations
+## Executing The Pre-Layout Simulations
  
   * First make sure the spice netlist which was extracted and modified is in the same directory as sky130_fd_pr folder.
   * Add an extension .out to the netlist file at the end.
@@ -138,15 +105,11 @@ The result of transient analysis is shown below
 
 *[Back To Top](#Table-of-Contents)* ⤴️ 
 
-</br>
- 
- # Author
- 
-  🖊️ Adithya Herle P S , B.Tech (Electronics and Communication Engineering), Reva University, Karntaka 
- 
- 
- # Acknowledgements
+# References
 
- 📖 Kunal Ghosh, Co-Founder of VLSI System Design (VSD) Corp. Pvt. Ltd. - kunalpghosh@gmail.com
+
+ 
+ 
+ 
 
 ---
