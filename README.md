@@ -107,6 +107,12 @@ The result of transient analysis is shown below
 
 # References
 
+  * Nishali. Layout Design Implementation of NOR Gate. (PDF) Layout Design Implementation of NOR Gate | IJEEE APM - Academia.edu.
+ 
+ </br>
+ 
+ 
+*[Back To Top](#Table-of-Contents)* 
 
  
  
