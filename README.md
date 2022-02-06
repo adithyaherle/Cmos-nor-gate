@@ -48,7 +48,7 @@ The images shown below represents the circuit diagram and a logic symbol of a CM
 
 </br>
 
-*[Back To Top](#Table-of-Contents)* ⤴️ 
+*[Back to the start](#Table-of-Contents)*  
 
 </br>
 
@@ -66,7 +66,7 @@ The truth table of the proposed CMOS NOR Gate can be found below: </br>
 
 </br>
 
-*[Back To Top](#Table-of-Contents)* ⤴️ 
+*[Back to the start](#Table-of-Contents)*  
 
 
 </br>
@@ -103,7 +103,7 @@ The result of transient analysis is shown below
    
  </br>
 
-*[Back to the start](#Table-of-Contents)* ⤴️ 
+*[Back to the start](#Table-of-Contents)* 
 
 # References
 
