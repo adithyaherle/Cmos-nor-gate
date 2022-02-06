@@ -34,8 +34,6 @@ This repository presents the design of a CMOS NOR Gate.
  * [Truth-Table](#Truth-Table)
  * [Open Source Tools Used](#Open-Source-Tools-Used)
  * [Pre Layout Simulations](#Pre-Layout-Simulations)
-   * [Tools And PDK Used For Pre-Layout Simulations](#Tools-and-PDK-used-for-pre-layout-simulations)
-     * [Installation Of Tools And PDK](#Installation-of-Tools-and-PDK)
    * [Pre-Layout Schematics And Simulations](#Pre-layout-schematics-and-simulations)
      * [Schematics](#Schematics)
      * [Simulation](#Simulation)
@@ -108,40 +106,7 @@ The truth table of the proposed CMOS NOR Gate can be found below: </br>
 
 # Pre Layout Simulations
 
-## Tools And PDK Used For Pre-Layout Simulations
-  * eSim
-  * Ngspice
-  * Skywater130 PDK
-  
-### Installation Of Tools And PDK
-
-📥 eSim:
- 
- * Download the latest eSim release for Windows OS from the below link provided.
- * Locate the installer file in the folder where your downloaded files are kept.
- * Double click on the file.
- * If a pop-up window appears asking "Do you want to allow the following program from an unknown publisher to make changes to this computer?", click YES.
- * Then in the ”License Agreement” window, select the I Agree option.
- * Click Next when the program asks for you to ”Choose Install Location”. We have taken care to auto-select the destination folder path.
- * In the next window that appears, select Install.
- * A progress bar will appear; once it reaches 100%, ”Installation Complete” message will be shown at the top of the eSim setup window. Click on Close. eSim shortcut icon will be on your Desktop.
-
-        🔗 https://esim.fossee.in/home
-     
-📥 Ngspice :
- 
-   * The eSim installer also installs Ngspice, so one can access ngspice by running the ngspice.exe file present in the eSim installation folder.
-   
-📥 Sky130 PDK :  
- 
-   * Download ZIP file from the below repository link shown below.
-   * After downloading the ZIP file, extract the contents, and go to libraries. Copy the sky130_fd_pr folder and paste it in the pre_layout folder.
-   
-     🔗 https://github.com/google/skywater-pdk
-
-## Pre-Layout Schematics And Simulations 
-
-### Schematics 
+## Schematics 
 
 Design of a CMOS NOR Gate is done using eSim tool and the snapshot of its schematic is shown below 
 
@@ -150,7 +115,7 @@ Design of a CMOS NOR Gate is done using eSim tool and the snapshot of its schema
 </p>
 The circuit schematic demonstrates the CMOS 2-input NOR gate as shown in the figure above. The two-input NOR gate uses two PMOS transistors in series between VDD and gate-output, and the complementary circuit of a parallel connection of two NMOS transistors between GND and gate-output as shown in figure.1. Here, first transistor’s source terminal is connected to Vdd (high) and lower transistor’s (NMOS) drain terminal is connected to Vss (GND). Second PMOS transistor’s drain terminal is shorted with both NMOS transistor’s source terminal and is given to the output which acts as an output terminal. It behaves complementary to the OR logic. If either input A or B or all are ‘high’ (1) then at least one of the lower transistors (NMOS) will be saturated, hence producing output ‘low’ (0). Only in the event of both inputs both inputs being ‘low’ (0) will both lower transistors (NMOS) be in cutoff mode and both upper transistors (PMOS) be saturated, thus producing output ‘high’ (1). This behavior defines a NOR Logic function.
 
-### Simulation
+## Simulation
 
 After creating the schematics, spice netlist was extracted with the help of esim and the eSim  mosfet models in the netlist file was replaced with sky130nm mosfet models and transient analysis was performed using ngspice.
 
